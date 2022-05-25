@@ -4,13 +4,12 @@ import {Route,Switch} from 'react-router-dom';
 import AllMeetupPage from './pages/AllMeetups';
 import NewMeetupPage from './pages/NewMeetup';
 import FavouritesPage from './pages/Favourites';
-import MainNavigation from './components/layout/MainNavigation';
+import Layout from './components/layout/Layout';
 
 // Function Runs on start because refferd in Index.js
 function App() {
   return (
-    <div>
-      <MainNavigation/>
+    <Layout>
       <Switch>  
       <Route path={'/'} exact={true}>  
        <AllMeetupPage/> 
@@ -21,8 +20,9 @@ function App() {
         <Route path={'/favourite'}>
           <FavouritesPage/>
           </Route> 
-        </Switch>     
-    </div>
+        </Switch>    
+       
+    </Layout>
   );
 }
 
